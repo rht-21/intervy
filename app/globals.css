@@ -186,6 +186,12 @@
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.4);
 }
 
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 font-sans;
