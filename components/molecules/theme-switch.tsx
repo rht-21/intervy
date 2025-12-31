@@ -62,7 +62,7 @@ const ThemeSwitch = () => {
           )}
         </button>
       </TooltipTrigger>
-      <TooltipContent className="flex items-center justify-center">
+      <TooltipContent className="hidden sm:flex items-center justify-center">
         <KbdGroup>
           <p>Toggle Mode</p>
           <Kbd>D</Kbd>
