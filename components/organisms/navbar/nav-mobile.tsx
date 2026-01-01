@@ -1,6 +1,5 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -17,9 +16,7 @@ const NavMobile = ({ children }: { children: React.ReactNode }) => {
         <SheetHeader>
           <SheetTitle className="sr-only" />
         </SheetHeader>
-        <SheetClose asChild>
-          <NavMenu isMobile />
-        </SheetClose>
+        <NavMenu isMobile />
         <NavButtons isMobile />
       </SheetContent>
     </Sheet>
