@@ -8,7 +8,7 @@ import NavButtons from "./nav-buttons";
 
 const Navbar = () => {
   return (
-    <section className="fixed top-0 left-0 right-0 h-20 w-full py-3 px-4">
+    <section className="fixed top-0 left-0 right-0 h-20 w-full py-3 px-4 z-50">
       <header
         className="
           mx-auto flex h-full max-w-5xl items-center justify-between
