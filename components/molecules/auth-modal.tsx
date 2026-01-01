@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogContent,
@@ -7,10 +9,20 @@ import {
 } from "@/components/atoms/ui/dialog";
 import SignInButton from "./sign-in-button";
 import Image from "next/image";
+import { DialogProps } from "@radix-ui/react-dialog";
+import { useRouter, useSearchParams } from "next/navigation";
 
-const AuthModal = async ({ children }: { children: React.ReactNode }) => {
+type AuthModalProps = DialogProps & {
+  children?: React.ReactNode;
+};
+
+const AuthModal = ({ children, ...props }: AuthModalProps) => {
+  const params = useSearchParams();
+  const router = useRouter();
+  const isOpen = params.has("login");
+
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={() => router.back()} {...props}>
       <form>
         <DialogTrigger asChild>{children}</DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
