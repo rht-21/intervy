@@ -1,0 +1,46 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+    viewBox="0 0 800 450"
+    opacity="0.3"
+  >
+    <defs>
+      <filter
+        id="bbblurry-filter"
+        x="-100%"
+        y="-100%"
+        width="400%"
+        height="400%"
+        filterUnits="objectBoundingBox"
+        primitiveUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feGaussianBlur
+          stdDeviation="130"
+          x="0%"
+          y="0%"
+          width="100%"
+          height="100%"
+          in="SourceGraphic"
+          edgeMode="none"
+          result="blur"
+        ></feGaussianBlur>
+      </filter>
+    </defs>
+    <g filter="url(#bbblurry-filter)">
+      <ellipse
+        rx="150"
+        ry="150"
+        cx="375.45635708895594"
+        cy="178.0166778564453"
+        fill="#7033ff"
+      ></ellipse>
+      <ellipse
+        rx="150"
+        ry="150"
+        cx="488.8593250621449"
+        cy="162.73914683948863"
+        fill="#1e69dc"
+      ></ellipse>
+    </g>
+  </svg>

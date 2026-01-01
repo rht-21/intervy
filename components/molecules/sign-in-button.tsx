@@ -1,12 +1,6 @@
-import { signIn } from "@/auth";
+import { handleLogin } from "@/actions/auth";
 import { Button } from "../atoms/ui/button";
 import { GoogleIcon } from "@/lib/constants/icons";
-
-export const handleLogin = async () => {
-  "use server";
-
-  await signIn("google");
-};
 
 const SignInButton = () => {
   return (

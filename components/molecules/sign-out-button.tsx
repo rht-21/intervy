@@ -1,10 +1,4 @@
-import { signOut } from "@/auth";
-
-const handleLogout = async () => {
-  "use server";
-
-  await signOut({ redirect: true, redirectTo: "/" });
-};
+import { handleLogout } from "@/actions/auth";
 
 const SignOutButton = () => {
   return (

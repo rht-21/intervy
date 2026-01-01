@@ -1,4 +1,4 @@
-import Navbar from "@/components/organisms/navbar";
+import Navbar from "@/components/organisms/navbar/navbar";
 
 export default async function Layout({
   children,
@@ -8,7 +8,7 @@ export default async function Layout({
   return (
     <main className="font-sans">
       <Navbar />
-      <section className="pt-20">{children}</section>
+      {children}
     </main>
   );
 }

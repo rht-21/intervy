@@ -1,5 +1,7 @@
+import Hero from "@/components/organisms/hero";
+
 const Page = () => {
-  return <></>;
+  return <Hero />;
 };
 
 export default Page;

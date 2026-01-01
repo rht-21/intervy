@@ -9,7 +9,16 @@ import NavButtons from "./nav-buttons";
 const Navbar = () => {
   return (
     <section className="fixed top-0 left-0 right-0 h-20 w-full py-3 px-4">
-      <header className="flex items-center justify-between h-full border rounded-full px-4 sm:px-8 max-w-5xl mx-auto">
+      <header
+        className="
+          mx-auto flex h-full max-w-5xl items-center justify-between
+          rounded-full px-4 sm:px-8
+          border border-background/20
+          bg-background/10
+          backdrop-blur-xl backdrop-saturate-150
+          shadow-sm
+        "
+      >
         <Link href="/" className="flex items-center justify-center gap-1">
           <Image src="/logo.svg" alt="Intervy logo" width={42} height={42} />
         </Link>

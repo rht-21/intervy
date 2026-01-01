@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { IBM_Plex_Mono, Schibsted_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
+import { AuthToast } from "@/components/molecules/auth-toast";
 
 const fontSans = Schibsted_Grotesk({
   variable: "--font-sans",
@@ -44,6 +46,8 @@ export default function RootLayout({
       <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
+          <Toaster richColors position="top-center" />
+          <AuthToast />
         </ThemeProvider>
       </body>
     </html>

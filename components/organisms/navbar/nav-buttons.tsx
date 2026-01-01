@@ -1,8 +1,8 @@
-import { Button } from "../atoms/ui/button";
+import { Button } from "../../atoms/ui/button";
 import { auth } from "@/auth";
-import ThemeSwitch from "../molecules/theme-switch";
-import AuthModal from "../molecules/auth-modal";
-import Profile from "../molecules/profile";
+import ThemeSwitch from "../../molecules/theme-switch";
+import AuthModal from "../../molecules/auth-modal";
+import Profile from "../../molecules/profile";
 import { cn } from "@/lib/utils";
 
 const NavButtons = async ({ isMobile = false }: { isMobile?: boolean }) => {

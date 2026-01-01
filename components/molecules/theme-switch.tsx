@@ -51,7 +51,7 @@ const ThemeSwitch = () => {
     <Tooltip>
       <TooltipTrigger asChild>
         <button
-          className="hover:text-primary flex aspect-square h-8 w-8 cursor-pointer items-center justify-center rounded-full border transition-colors duration-200"
+          className="flex aspect-square h-8 w-8 cursor-pointer items-center justify-center rounded-full border transition-colors duration-200 hover:text-primary hover:border-primary"
           onClick={toggleTheme}
           aria-label="Toggle theme (D)"
         >

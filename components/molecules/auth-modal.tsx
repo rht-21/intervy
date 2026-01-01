@@ -5,14 +5,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/atoms/ui/dialog";
-import SignOutButton from "./sign-out-button";
 import SignInButton from "./sign-in-button";
-import { auth } from "@/auth";
 import Image from "next/image";
 
 const AuthModal = async ({ children }: { children: React.ReactNode }) => {
-  const session = await auth();
-
   return (
     <Dialog>
       <form>
