@@ -1,5 +1,6 @@
 "use client";
 
+import { SheetClose } from "@/components/atoms/ui/sheet";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,16 +44,31 @@ const NavMenu = ({ isMobile = false }: NavMenuProps) => {
       >
         {navItems.map((item) => (
           <li key={item.href}>
-            <Link
-              href={item.href}
-              className={cn(
-                "duration-300 hover:text-primary capitalize",
-                pathname === item.href ? "text-primary" : "",
-                isMobile ? "text-lg" : "text-sm"
-              )}
-            >
-              {item.label}
-            </Link>
+            {isMobile ? (
+              <SheetClose asChild>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "duration-300 hover:text-primary capitalize",
+                    pathname === item.href ? "text-primary" : "",
+                    "text-lg"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </SheetClose>
+            ) : (
+              <Link
+                href={item.href}
+                className={cn(
+                  "duration-300 hover:text-primary capitalize",
+                  pathname === item.href ? "text-primary" : "",
+                  "text-sm"
+                )}
+              >
+                {item.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

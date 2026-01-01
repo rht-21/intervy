@@ -3,6 +3,7 @@ import { Button } from "../atoms/ui/button";
 import AuthModal from "../molecules/auth-modal";
 import { auth } from "@/auth";
 import Link from "next/link";
+import { LazyImage } from "../molecules/lazy-image";
 
 const Hero = async () => {
   const session = await auth();
@@ -12,7 +13,7 @@ const Hero = async () => {
       id="hero"
       className="bg-[url('/images/blurred-bg.svg')] bg-cover bg-center pt-20 min-h-dvh"
     >
-      <main className="center-align flex flex-col items-center gap-6 px-4 py-12 md:py-16 lg:py-24">
+      <main className="center-align flex flex-col items-center gap-6 px-4 py-12 md:py-16">
         <h1 className="text-3xl md:text-5xl lg:text-7xl text-balance md:max-w-2xl lg:max-w-4xl text-center">
           Practice interviews like real{" "}
           <span className="text-primary">conversations.</span>
@@ -36,6 +37,13 @@ const Hero = async () => {
             </Button>
           </Link>
         )}
+        <LazyImage
+          src="/images/flow.webp"
+          alt="Work Flow"
+          width={400}
+          height={300}
+          className="max-w-4xl w-full h-auto mt-4 md:mt-8 rounded-lg"
+        />
       </main>
     </section>
   );
