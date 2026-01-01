@@ -1,6 +1,6 @@
 {
-  "id": "0155f8ed-b7f5-4ae7-a532-3fd298f17fa0",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "aa6d61df-e31f-4853-a2fb-e18c7a148e3a",
+  "prevId": "0155f8ed-b7f5-4ae7-a532-3fd298f17fa0",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -80,6 +80,51 @@
         "account_userId_user_id_fk": {
           "name": "account_userId_user_id_fk",
           "tableFrom": "account",
+          "tableTo": "user",
+          "columnsFrom": [
+            "userId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.session": {
+      "name": "session",
+      "schema": "",
+      "columns": {
+        "sessionToken": {
+          "name": "sessionToken",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "userId": {
+          "name": "userId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires": {
+          "name": "expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "session_userId_user_id_fk": {
+          "name": "session_userId_user_id_fk",
+          "tableFrom": "session",
           "tableTo": "user",
           "columnsFrom": [
             "userId"
