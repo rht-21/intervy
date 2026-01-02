@@ -14,11 +14,11 @@ const NavButtons = async ({ isMobile = false }: { isMobile?: boolean }) => {
       className={cn(
         isMobile
           ? "flex flex-col-reverse sm:hidden gap-4 mt-6"
-          : "hidden sm:flex-center gap-2"
+          : "hidden sm:flex justify-end gap-2"
       )}
     >
       <ThemeSwitch />
-      {session && session?.user ? (
+      {session ? (
         <Profile />
       ) : (
         <AuthModal>
