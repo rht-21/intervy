@@ -93,7 +93,7 @@ const InterviewList = ({
             <span>
               No interviews yet.{" "}
               <Link
-                href="/interviews/create"
+                href="/interviews"
                 className="text-accent-foreground duration-200 hover:underline"
               >
                 Create
