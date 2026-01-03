@@ -6,6 +6,8 @@ import { Toaster } from "sonner";
 import { AuthToast } from "@/components/molecules/auth-toast";
 import Navbar from "@/components/organisms/navbar/navbar";
 import { Suspense } from "react";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const fontSans = Schibsted_Grotesk({
   variable: "--font-sans",
@@ -38,23 +40,28 @@ export const metadata: Metadata = {
   creator: "Intervy",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          {children}
-          <Toaster richColors position="top-center" />
-          <Suspense fallback={null}>
-            <AuthToast />
-          </Suspense>
-        </ThemeProvider>
-      </body>
+      <SessionProvider session={session}>
+        <body
+          className={`${fontSans.variable} ${fontMono.variable} antialiased`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            {children}
+            <Toaster richColors expand />
+            <Suspense fallback={null}>
+              <AuthToast />
+            </Suspense>
+          </ThemeProvider>
+        </body>
+      </SessionProvider>
     </html>
   );
 }

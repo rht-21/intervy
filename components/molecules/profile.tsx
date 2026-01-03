@@ -28,7 +28,7 @@ const Profile = async () => {
           <DropdownMenuItem disabled>My Interviews</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem asChild>
           <SignOutButton />
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -15,7 +15,7 @@ export function AuthToast() {
     }
     if (params.get("signedIn")) {
       toast.success("Signed in successfully.");
-      router.replace("/");
+      router.replace("/interviews");
     }
   }, [params, router]);
 

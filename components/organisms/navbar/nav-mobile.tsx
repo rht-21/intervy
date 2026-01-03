@@ -11,7 +11,9 @@ import NavButtons from "./nav-buttons";
 const NavMobile = ({ children }: { children: React.ReactNode }) => {
   return (
     <Sheet>
-      <SheetTrigger className="sm:hidden">{children}</SheetTrigger>
+      <SheetTrigger className="sm:hidden flex justify-end">
+        {children}
+      </SheetTrigger>
       <SheetContent className="flex flex-col p-8 max-sm:visible sm:hidden">
         <SheetHeader>
           <SheetTitle className="sr-only" />
