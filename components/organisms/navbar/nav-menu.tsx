@@ -16,8 +16,8 @@ const navItems: NavItems[] = [
     href: "/",
   },
   {
-    label: "Features",
-    href: "/features",
+    label: "Browse",
+    href: "/interviews/browse",
   },
   {
     label: "Interviews",
@@ -31,6 +31,20 @@ type NavMenuProps = {
 
 const NavMenu = ({ isMobile = false }: NavMenuProps) => {
   const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (pathname === href) return true;
+
+    if (
+      href === "/interviews" &&
+      pathname.startsWith("/interviews/") &&
+      !pathname.startsWith("/interviews/browse")
+    ) {
+      return true;
+    }
+
+    return false;
+  };
 
   return (
     <nav className={cn(isMobile ? "" : "grow")}>
@@ -50,7 +64,7 @@ const NavMenu = ({ isMobile = false }: NavMenuProps) => {
                   href={item.href}
                   className={cn(
                     "duration-300 hover:text-primary capitalize",
-                    pathname === item.href ? "text-primary" : "",
+                    isActive(item.href) ? "text-primary" : "",
                     "text-lg"
                   )}
                 >
@@ -62,7 +76,7 @@ const NavMenu = ({ isMobile = false }: NavMenuProps) => {
                 href={item.href}
                 className={cn(
                   "duration-300 hover:text-primary capitalize",
-                  pathname === item.href ? "text-primary" : "",
+                  isActive(item.href) ? "text-primary" : "",
                   "text-sm"
                 )}
               >

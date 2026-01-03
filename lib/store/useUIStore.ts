@@ -8,6 +8,13 @@ type UIState = {
   isLoading: boolean;
   openLoader: () => void;
   closeLoader: () => void;
+
+  isCreateInterviewModalOpen: boolean;
+  openCreateInterviewModal: () => void;
+  closeCreateInterviewModal: () => void;
+
+  fetchInterviewList: boolean;
+  setFetchInterviewList: (fetchInterviewList: boolean) => void;
 };
 
 export const useUIStore = create<UIState>((set) => ({
@@ -18,4 +25,12 @@ export const useUIStore = create<UIState>((set) => ({
   isLoading: false,
   openLoader: () => set({ isLoading: true }),
   closeLoader: () => set({ isLoading: false }),
+
+  isCreateInterviewModalOpen: false,
+  openCreateInterviewModal: () => set({ isCreateInterviewModalOpen: true }),
+  closeCreateInterviewModal: () => set({ isCreateInterviewModalOpen: false }),
+
+  fetchInterviewList: false,
+  setFetchInterviewList: (fetchInterviewList: boolean) =>
+    set({ fetchInterviewList }),
 }));

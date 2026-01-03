@@ -18,9 +18,7 @@ const CountCard = ({
     <div
       {...props}
       role="card"
-      className={`bg-card h-24 p-4 rounded-md space-y-2 ${
-        props.className ?? ""
-      }`}
+      className={`bg-card p-4 rounded-md space-y-2 ${props.className ?? ""}`}
     >
       <h3
         className={`text-sm uppercase font-semibold tracking-wide text-muted-foreground ${

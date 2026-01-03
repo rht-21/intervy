@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { Button } from "../atoms/ui/button";
 import AuthModal from "../molecules/auth-modal";
 import { auth } from "@/auth";
@@ -30,12 +30,23 @@ const Hero = async () => {
             </Button>
           </AuthModal>
         ) : (
-          <Link href="/interviews" passHref>
-            <Button className="flex items-center justify-center gap-1 group">
-              Practice Now
-              <ArrowRight className="stroke-[1.25] transition-transform duration-300 group-hover:-rotate-45" />
-            </Button>
-          </Link>
+          <div className="flex-center gap-4">
+            <Link href="/interviews/browse" passHref>
+              <Button
+                className="flex items-center justify-center gap-2 group"
+                variant="secondary"
+              >
+                <Search className="stroke-[1.25] transition-transform duration-300 group-hover:scale-90" />
+                Explore Interviews
+              </Button>
+            </Link>
+            <Link href="/interviews" passHref>
+              <Button className="flex items-center justify-center gap-1 group">
+                Practice Now
+                <ArrowRight className="stroke-[1.25] transition-transform duration-300 group-hover:-rotate-45" />
+              </Button>
+            </Link>
+          </div>
         )}
         <LazyImage
           src="/images/flow.webp"

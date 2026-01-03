@@ -11,7 +11,6 @@ export function AuthModalTrigger({ shouldOpen }: { shouldOpen: boolean }) {
   useEffect(() => {
     if (shouldOpen) {
       openAuthDialog();
-      router.replace("/");
     }
   }, [shouldOpen, openAuthDialog, router]);
 
